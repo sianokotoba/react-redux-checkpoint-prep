@@ -65,7 +65,7 @@ describe('<RegistryItem />', () => {
         it('calls props.markAsPurchased with the item id when clicked', () => {
             itemWrapper.simulate('click');
             expect(markAsPurchasedSpy.called).to.be.true;
-        });        
+        });
     });
 
 });
@@ -103,6 +103,7 @@ describe('<RegistryList />', () => {
         it('child <RegistryItem /> components based its current state', () => {
 
             registryListWrapper.setState({registryItems: randomItems});
+            // console.log(this.state.registryItems)
 
             expect(registryListWrapper.find(RegistryItem)).to.have.length(10);
 

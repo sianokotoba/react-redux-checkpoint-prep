@@ -1,5 +1,16 @@
-const initialState = {};
+import  { createNewItemAction } from './actions';
+
+const initialState = {
+  registryItems: []
+};
 
 export default (state = initialState, action) => {
-    return state;
+  switch (action.type) {
+    case 'ADD_ITEM_TO_REGISTRY':
+      return Object.assign({}, state, {
+        registryItems: state.registryItems.concat(action.item)
+      })
+    default:
+      return state;
+  }
 };
